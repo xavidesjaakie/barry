@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookieMuur - Winkelmand</title>
+    <link rel="stylesheet" href="Cookiewall.css">
+</head>
+<body>
+    <div class="cookie-muur" id="cookieMuur">
+        <h1>Welkom bij mijn site!</h1>
+        <p>Voer een getal in tussen 1 en 10 om verder te gaan:</p>
+        <input type="number" id="getalInput" placeholder="Getal tussen 1 en 10">
+        <button onclick="checkToegang()">Verzenden</button>
+        <p id="errorMessage" style="color: red; margin-top: 10px;"></p>
+    </div>
+
+    <div class="winkel" id="winkel" style="display: none;">
+        <h1>Welkom in de winkel!</h1>
+        <p>Kies producten om toe te voegen aan je mandje:</p>
+        <div class="producten">
+            <div class="product">
+                <h3>Kaas - €1.50</h3>
+                <button onclick="addToCart('Kaas')">Voeg toe aan mandje</button>
+            </div>
+            <div class="product">
+                <h3>Brood - €1.50</h3>
+                <button onclick="addToCart('Brood')">Voeg toe aan mandje</button>
+            </div>
+            <div class="product">
+                <h3>Melk - €1.50</h3>
+                <button onclick="addToCart('Melk')">Voeg toe aan mandje</button>
+            </div>
+        </div>
+
+        <button onclick="openCart()">Bekijk winkelmandje</button>
+    </div>
+
+    <!-- Popup winkelmand -->
+    <div id="cartPopup" class="cart-popup">
+        <div class="cart-content">
+            <h2>Winkelmandje</h2>
+            <ul id="cart"></ul>
+            <p id="totalPrice">Totaal: €0.00</p>
+            <button onclick="closeCart()">Sluit</button>
+        </div>
+    </div>
+
+    <script src="cookiewall.js"></script>
+</body>
+</html>
+
